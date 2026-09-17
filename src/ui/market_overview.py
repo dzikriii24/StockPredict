@@ -93,30 +93,46 @@ def render_mini_analysis(ticker: str, company: str, current_price: float, pct_ch
         
         if pred_results and pred_results.get("status") == "success":
             horizons = pred_results.get("horizons", {})
-            col1, col2, col3 = st.columns(3)
+            h_keys = list(horizons.keys())
             
-            d1_pred = horizons.get("1d", {})
-            target_str = f"Target: Rp {d1_pred.get('predicted_price'):,.0f}" if d1_pred.get("predicted_price") else f"{d1_pred.get('probability', 0)*100:.1f}% Prob"
-            target_str = f"Target: Rp {d1_pred.get('predicted_price'):,.0f}" if d1_pred.get("predicted_price") else f"{d1_pred.get('probability', 0)*100:.1f}% Prob"
-            col1.metric("Jangka Pendek", d1_pred.get("prediction", "N/A"), target_str,
-                      delta_color="normal" if d1_pred.get("prediction") == "UP" else "inverse")
-            
-            d5_pred = horizons.get("5d", {})
-            target_str = f"Target: Rp {d5_pred.get('predicted_price'):,.0f}" if d5_pred.get("predicted_price") else f"{d5_pred.get('probability', 0)*100:.1f}% Prob"
-            col2.metric("Menengah", d5_pred.get("prediction", "N/A"), target_str,
-                      delta_color="normal" if d5_pred.get("prediction") == "UP" else "inverse")
-                      
-            d20_pred = horizons.get("20d", {})
-            target_str = f"Target: Rp {d20_pred.get('predicted_price'):,.0f}" if d20_pred.get("predicted_price") else f"{d20_pred.get('probability', 0)*100:.1f}% Prob"
-            col3.metric("Jangka Panjang", d20_pred.get("prediction", "N/A"), target_str,
-                      delta_color="normal" if d20_pred.get("prediction") == "UP" else "inverse")
+            if len(h_keys) > 0:
+                col1, col2, col3 = st.columns(3)
+                
+                h1 = horizons.get(h_keys[0], {})
+                target_str = f"Target: Rp {h1.get('predicted_price'):,.0f}" if h1.get("predicted_price") else f"{h1.get('probability', 0)*100:.1f}% Prob"
+                col1.metric(f"Terdekat (+{h_keys[0]})", h1.get("prediction", "N/A"), target_str,
+                          delta_color="normal" if h1.get("prediction") == "UP" else "inverse")
+                
+                h2 = horizons.get(h_keys[len(h_keys)//2], {}) if len(h_keys) > 2 else {}
+                if h2:
+                    target_str = f"Target: Rp {h2.get('predicted_price'):,.0f}" if h2.get("predicted_price") else f"{h2.get('probability', 0)*100:.1f}% Prob"
+                    col2.metric(f"Menengah (+{h_keys[len(h_keys)//2]})", h2.get("prediction", "N/A"), target_str,
+                              delta_color="normal" if h2.get("prediction") == "UP" else "inverse")
+                          
+                h3 = horizons.get(h_keys[-1], {}) if len(h_keys) > 1 else {}
+                if h3:
+                    target_str = f"Target: Rp {h3.get('predicted_price'):,.0f}" if h3.get("predicted_price") else f"{h3.get('probability', 0)*100:.1f}% Prob"
+                    col3.metric(f"Terjauh (+{h_keys[-1]})", h3.get("prediction", "N/A"), target_str,
+                              delta_color="normal" if h3.get("prediction") == "UP" else "inverse")
         
-        test_res = pred_results.get("horizons", {}).get("1d", {}).get("test_results") if pred_results else None
-        d1 = pred_results.get("horizons", {}).get("1d", {}) if pred_results else None
+        horizons = pred_results.get("horizons", {}) if pred_results and pred_results.get("status") == "success" else {}
+        h_keys = list(horizons.keys())
+        base_horizon = horizons.get(h_keys[0], {}) if h_keys else {}
         
-        fig = create_prediction_chart(df_tech, test_res, ticker, future_prediction=d1, interval=interval)
-        # Prediction chart expects test_results from the dict. It handles None gracefully.
-        st.plotly_chart(fig, use_container_width=True, key=f"chart_{category}_{ticker}")
+        pred_path = base_horizon.get("predicted_path", [])
+        lb = base_horizon.get("lower_bound", [])
+        ub = base_horizon.get("upper_bound", [])
+        
+        from src.ui.chart_component import render_tradingview_chart
+        render_tradingview_chart(
+            df=df_tech,
+            ticker=ticker,
+            prediction_path=pred_path,
+            lower_bound=lb,
+            upper_bound=ub,
+            current_price=current_price,
+            height=400
+        )
         
         explanation = generate_explanation(explanation_data)
         st.info(explanation)
@@ -159,19 +175,29 @@ def render_market_overview():
             
             if ihsg_pred and ihsg_pred["status"] == "success":
                 horizons = ihsg_pred.get("horizons", {})
-                d1 = horizons.get("1d", {})
-                test_res = d1.get("test_results")
             else:
                 horizons = {}
-                d1 = None
-                test_res = None
                 
             col_chart, col_pred = st.columns([2, 1])
             
             with col_chart:
-                # Show Prediction Chart for IHSG
-                fig_ihsg = create_prediction_chart(df_ihsg_tech, test_res, "^JKSE (IHSG)", future_prediction=d1, interval=selected_interval)
-                st.plotly_chart(fig_ihsg, use_container_width=True, key="ihsg_main_chart")
+                h_keys = list(horizons.keys())
+                base_horizon = horizons.get(h_keys[0], {}) if h_keys else {}
+                
+                pred_path = base_horizon.get("predicted_path", [])
+                lb = base_horizon.get("lower_bound", [])
+                ub = base_horizon.get("upper_bound", [])
+                
+                from src.ui.chart_component import render_tradingview_chart
+                render_tradingview_chart(
+                    df=df_ihsg_tech,
+                    ticker="^JKSE (IHSG)",
+                    prediction_path=pred_path,
+                    lower_bound=lb,
+                    upper_bound=ub,
+                    current_price=df_ihsg_tech.iloc[-1]["Close"] if not df_ihsg_tech.empty else None,
+                    height=450
+                )
                 
             with col_pred:
                 st.markdown("#### Prediksi Pasar (AI)")
@@ -179,23 +205,24 @@ def render_market_overview():
                 
                 if ihsg_pred and ihsg_pred["status"] == "success":
                     
-                    # 1-Day (Next Interval)
-                    d1 = horizons.get("1d", {})
-                    target_str = f"Target: Rp {d1.get('predicted_price'):,.0f}" if d1.get("predicted_price") else f"{d1.get('probability', 0)*100:.1f}% Prob"
-                    st.metric("Jangka Pendek", d1.get("prediction", "N/A"), target_str,
-                              delta_color="normal" if d1.get("prediction") == "UP" else "inverse")
-                    
-                    # 5-Day (5 Intervals)
-                    d5 = horizons.get("5d", {})
-                    target_str = f"Target: Rp {d5.get('predicted_price'):,.0f}" if d5.get("predicted_price") else f"{d5.get('probability', 0)*100:.1f}% Prob"
-                    st.metric("Menengah", d5.get("prediction", "N/A"), target_str,
-                              delta_color="normal" if d5.get("prediction") == "UP" else "inverse")
-                              
-                    # 20-Day (20 Intervals)
-                    d20 = horizons.get("20d", {})
-                    target_str = f"Target: Rp {d20.get('predicted_price'):,.0f}" if d20.get("predicted_price") else f"{d20.get('probability', 0)*100:.1f}% Prob"
-                    st.metric("Jangka Panjang", d20.get("prediction", "N/A"), target_str,
-                              delta_color="normal" if d20.get("prediction") == "UP" else "inverse")
+                    h_keys = list(horizons.keys())
+                    if len(h_keys) > 0:
+                        h1 = horizons.get(h_keys[0], {})
+                        target_str = f"Target: Rp {h1.get('predicted_price'):,.0f}" if h1.get("predicted_price") else f"{h1.get('probability', 0)*100:.1f}% Prob"
+                        st.metric(f"Terdekat (+{h_keys[0]})", h1.get("prediction", "N/A"), target_str,
+                                  delta_color="normal" if h1.get("prediction") == "UP" else "inverse")
+                        
+                        h2 = horizons.get(h_keys[len(h_keys)//2], {}) if len(h_keys) > 2 else {}
+                        if h2:
+                            target_str = f"Target: Rp {h2.get('predicted_price'):,.0f}" if h2.get("predicted_price") else f"{h2.get('probability', 0)*100:.1f}% Prob"
+                            st.metric(f"Menengah (+{h_keys[len(h_keys)//2]})", h2.get("prediction", "N/A"), target_str,
+                                      delta_color="normal" if h2.get("prediction") == "UP" else "inverse")
+                                  
+                        h3 = horizons.get(h_keys[-1], {}) if len(h_keys) > 1 else {}
+                        if h3:
+                            target_str = f"Target: Rp {h3.get('predicted_price'):,.0f}" if h3.get("predicted_price") else f"{h3.get('probability', 0)*100:.1f}% Prob"
+                            st.metric(f"Terjauh (+{h_keys[-1]})", h3.get("prediction", "N/A"), target_str,
+                                      delta_color="normal" if h3.get("prediction") == "UP" else "inverse")
                 else:
                     st.error(f"Gagal melatih model untuk IHSG. {ihsg_pred.get('message', '')}")
         else:
