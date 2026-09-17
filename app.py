@@ -118,6 +118,7 @@ def main():
             selected_ticker = st.selectbox("Pilih Saham", tickers, index=default_index)
             
         st.caption("© 2026 StockPredict")
+        st.caption("Created by Dzikri, Fadli, Daffa, Informatics Engineering 23")
     
     # ─── Routing ────────────────────────────────────────────────────
     if nav_section == "Live Market Center":
