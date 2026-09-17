@@ -1,1 +1,1 @@
-{"metrics": {"accuracy": 0.6046511627906976, "precision": 0.0, "recall": 0.0, "f1_score": 0.0, "roc_auc": 0.4614065180102916, "rmse": 245.7160013066502}, "feature_columns": ["MA20", "MA50", "RSI", "MACD", "MACD_Signal", "BB_Upper", "BB_Lower", "Volume_Ratio"]}
+{"metrics": {"accuracy": 0.6046511627906976, "precision": 0.0, "recall": 0.0, "f1_score": 0.0, "roc_auc": 0.4614065180102916, "rmse": 245.7891425294295}, "feature_columns": ["MA20", "MA50", "RSI", "MACD", "MACD_Signal", "BB_Upper", "BB_Lower", "Volume_Ratio"]}

@@ -316,9 +316,15 @@ def _extract_ml_data(pred: dict, mode: str) -> dict:
                 "d1": {}, "d3": {}, "d5": {}}
 
     horizons = pred.get("horizons", {})
-    d1 = horizons.get("1d", {})
-    d5 = horizons.get("5d", {})
-    d20 = horizons.get("20d", {})
+    h_keys = list(horizons.keys())
+    
+    if len(h_keys) == 0:
+        return {"prediction": "N/A", "probability": 0, "accuracy": 0, "score": 0,
+                "d1": {}, "d3": {}, "d5": {}}
+                
+    d1 = horizons.get(h_keys[0], {})
+    d5 = horizons.get(h_keys[len(h_keys)//2], {}) if len(h_keys) > 2 else d1
+    d20 = horizons.get(h_keys[-1], {}) if len(h_keys) > 1 else d1
 
     # Use mode-appropriate horizon
     primary = d5 if mode in ["5d", "3d"] else d1

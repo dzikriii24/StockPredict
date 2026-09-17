@@ -90,13 +90,54 @@ def render_presentation_mode(ticker: str):
     st.markdown("#### 3. Prediksi & Target (Short-Term Scanner)")
     if pred_results and pred_results["status"] == "success":
         horizons = pred_results.get("horizons", {})
-        d1 = horizons.get("1d", {})
-        d5 = horizons.get("5d", {})
-        d20 = horizons.get("20d", {})
-        
-        st.write(f"- **Jangka Pendek (1 Hari):** {d1.get('prediction')} ({d1.get('probability', 0)*100:.1f}% Prob) | Acc: {d1.get('accuracy', 0)*100:.1f}%")
-        st.write(f"- **Jangka Menengah (1 Minggu):** {d5.get('prediction')} ({d5.get('probability', 0)*100:.1f}% Prob) | Acc: {d5.get('accuracy', 0)*100:.1f}%")
-        st.write(f"- **Jangka Panjang (1 Bulan):** {d20.get('prediction')} ({d20.get('probability', 0)*100:.1f}% Prob) | Acc: {d20.get('accuracy', 0)*100:.1f}%")
+        h_keys = list(horizons.keys())
+        if len(h_keys) > 0:
+            h1 = horizons.get(h_keys[0], {})
+            h2 = horizons.get(h_keys[len(h_keys)//2], {}) if len(h_keys) > 2 else {}
+            h3 = horizons.get(h_keys[-1], {}) if len(h_keys) > 1 else {}
+            
+            st.write(f"- **Terdekat (+{h_keys[0]}):** {h1.get('prediction')} ({h1.get('probability', 0)*100:.1f}% Prob) | Acc: {h1.get('accuracy', 0)*100:.1f}%")
+            if h2:
+                st.write(f"- **Menengah (+{h_keys[len(h_keys)//2]}):** {h2.get('prediction')} ({h2.get('probability', 0)*100:.1f}% Prob) | Acc: {h2.get('accuracy', 0)*100:.1f}%")
+            if h3:
+                st.write(f"- **Terjauh (+{h_keys[-1]}):** {h3.get('prediction')} ({h3.get('probability', 0)*100:.1f}% Prob) | Acc: {h3.get('accuracy', 0)*100:.1f}%")
+                
+            st.markdown("---")
+            with st.expander("📊 Eksperimen Test Period (Training Configuration)"):
+                st.markdown("Bandingkan pengaruh rasio pembagian data (Train/Test Split) terhadap performa model forecast.")
+                
+                exp_col1, exp_col2 = st.columns([1, 1])
+                with exp_col1:
+                    exp_split = st.select_slider(
+                        "Test Period Split Ratio",
+                        options=[0.5, 0.6, 0.7, 0.8, 0.9],
+                        value=0.8,
+                        format_func=lambda x: f"Train {int(x*100)}% / Test {int((1-x)*100)}%",
+                        key="pres_split"
+                    )
+                with exp_col2:
+                    st.write("")
+                    st.write("")
+                    run_exp = st.button("Jalankan Eksperimen & Lihat Hasil", key="pres_run")
+                    
+                if run_exp:
+                    with st.spinner("Melatih ulang model untuk bereksperimen..."):
+                        # Re-run train with new split
+                        exp_results = train_and_predict(df_merged, ticker=f"{ticker}_1d", train_ratio=exp_split)
+                        if exp_results["status"] == "success":
+                            st.success("Eksperimen selesai!")
+                            import pandas as pd
+                            rows = []
+                            for h_k, h_v in exp_results.get("horizons", {}).items():
+                                rows.append({
+                                    "Horizon": f"+{h_k}",
+                                    "Akurasi Arah": f"{h_v.get('accuracy', 0):.1%}",
+                                    "RMSE (Error)": f"Rp {h_v.get('rmse', 0):.0f}",
+                                    "Prediksi Terakhir": h_v.get('prediction', 'N/A')
+                                })
+                            st.dataframe(pd.DataFrame(rows), use_container_width=True)
+                        else:
+                            st.error("Gagal menjalankan eksperimen.")
         
         if cand:
             entry = cand.get("Entry", {})
