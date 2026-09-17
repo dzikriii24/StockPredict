@@ -1,0 +1,165 @@
+// ═══════════════════════════════════════════════════════════════════
+// Stock Intel — Short-Term Trading Strategy ⚡
+// Versi PineScript untuk TradingView (Backtestable)
+// Entry: Momentum + VWAP + Volume Confirmation
+// Exit: TP1/TP2 or Stop Loss (structure-based)
+// ═══════════════════════════════════════════════════════════════════
+//@version=5
+strategy("Stock Intel Strategy ⚡", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=90, commission_type=strategy.commission.percent, commission_value=0.15, slippage=1, initial_capital=10000000, currency=currency.NONE)
+
+// ─── INPUT SETTINGS ──────────────────────────────────────────────
+grp_entry = "Entry Conditions"
+use_vwap      = input.bool(true, "Require Price > VWAP", group=grp_entry)
+use_momentum  = input.bool(true, "Require Momentum ≥ MODERATE", group=grp_entry)
+use_volume    = input.bool(true, "Require RVOL > 1.2x", group=grp_entry)
+min_rr        = input.float(1.5, "Minimum R/R Ratio", minval=0.5, maxval=5.0, step=0.1, group=grp_entry)
+
+grp_exit = "Exit Settings"
+use_tp2       = input.bool(false, "Use TP2 instead of TP1", group=grp_exit)
+atr_tp_mult   = input.float(1.5, "ATR Multiplier TP", minval=0.5, maxval=5.0, step=0.1, group=grp_exit)
+atr_sl_mult   = input.float(1.5, "ATR Multiplier SL", minval=0.5, maxval=5.0, step=0.1, group=grp_exit)
+trail_stop     = input.bool(false, "Use Trailing Stop", group=grp_exit)
+trail_pct      = input.float(2.0, "Trail Stop %", minval=0.5, maxval=10.0, step=0.1, group=grp_exit)
+
+grp_filter = "Filters"
+rsi_ob        = input.int(75, "RSI Overbought (No Entry)", minval=60, maxval=90, group=grp_filter)
+rsi_os        = input.int(25, "RSI Oversold (No Entry)", minval=10, maxval=40, group=grp_filter)
+max_change    = input.float(8.0, "Max Daily Change % (No Entry)", minval=3.0, maxval=20.0, step=0.5, group=grp_filter)
+
+grp_time = "Trading Hours (IDX)"
+use_session   = input.bool(true, "Only Trade During Session", group=grp_time)
+session_start = input.int(9, "Session Start Hour", minval=0, maxval=23, group=grp_time)
+session_end   = input.int(16, "Session End Hour", minval=0, maxval=23, group=grp_time)
+
+// ─── CALCULATIONS ────────────────────────────────────────────────
+// EMAs
+ema9  = ta.ema(close, 9)
+ema20 = ta.ema(close, 20)
+ema50 = ta.ema(close, 50)
+
+// ATR
+atr14 = ta.atr(14)
+
+// RSI
+rsi14 = ta.rsi(close, 14)
+
+// MACD
+[macdLine, signalLine, macdHist] = ta.macd(close, 12, 26, 9)
+
+// ROC
+roc10 = ta.roc(close, 10)
+
+// VWAP
+vwapVal = ta.vwap(hlc3)
+
+// Volume
+vol_avg = ta.sma(volume, 20)
+rvol    = vol_avg > 0 ? volume / vol_avg : 1.0
+
+// Support & Resistance
+sr_period  = 20
+resistance = ta.highest(high, sr_period)
+support    = ta.lowest(low, sr_period)
+
+// ─── MOMENTUM SCORE ──────────────────────────────────────────────
+bullish_count = 0
+bullish_count += (rsi14 > 50 and rsi14 < rsi_ob) ? 1 : 0
+bullish_count += (macdLine > signalLine) ? 1 : 0
+bullish_count += (close > ema9) ? 1 : 0
+bullish_count += (close > ema20) ? 1 : 0
+bullish_count += (ema20 > ema50) ? 1 : 0
+bullish_count += (roc10 > 0) ? 1 : 0
+
+is_strong   = bullish_count >= 5
+is_moderate = bullish_count >= 3
+
+// ─── TARGET & STOP LOSS ─────────────────────────────────────────
+tp1_price = resistance > close ? resistance : close + atr14 * atr_tp_mult
+tp2_price = ta.highest(high, 10) > tp1_price ? ta.highest(high, 10) : tp1_price + atr14
+
+sl_support = support - atr14 * 0.3
+sl_atr     = close - atr14 * atr_sl_mult
+sl_raw     = math.max(sl_support, sl_atr)
+sl_final   = sl_raw >= close ? close - atr14 * atr_sl_mult : sl_raw
+
+target_price = use_tp2 ? tp2_price : tp1_price
+
+// Risk/Reward
+pot_profit = target_price - close
+pot_loss   = close - sl_final
+rr_ratio   = pot_loss > 0 ? pot_profit / pot_loss : 0
+
+// ─── DAILY CHANGE FILTER ─────────────────────────────────────────
+daily_change = close != 0 ? math.abs((close - close[1]) / close[1]) * 100 : 0
+
+// ─── SESSION FILTER ──────────────────────────────────────────────
+in_session = true
+if use_session
+    in_session := hour >= session_start and hour < session_end
+
+// ─── ENTRY CONDITIONS ────────────────────────────────────────────
+vwap_ok     = use_vwap ? close > vwapVal : true
+momentum_ok = use_momentum ? is_moderate : true
+volume_ok   = use_volume ? rvol > 1.2 : true
+rr_ok       = rr_ratio >= min_rr
+rsi_ok      = rsi14 < rsi_ob and rsi14 > rsi_os
+change_ok   = daily_change < max_change
+no_position = strategy.position_size == 0
+
+long_entry = vwap_ok and momentum_ok and volume_ok and rr_ok and rsi_ok and change_ok and in_session and no_position
+
+// ─── EXIT CONDITIONS ─────────────────────────────────────────────
+// Momentum collapse exit
+momentum_exit = bullish_count <= 1 and strategy.position_size > 0
+
+// ─── EXECUTE STRATEGY ────────────────────────────────────────────
+if long_entry
+    strategy.entry("Long", strategy.long)
+    if trail_stop
+        strategy.exit("Exit", "Long", trail_points=close * trail_pct / 100 / syminfo.mintick, trail_offset=close * trail_pct / 200 / syminfo.mintick)
+    else
+        strategy.exit("Exit", "Long", limit=target_price, stop=sl_final)
+
+if momentum_exit
+    strategy.close("Long", comment="Mom Exit")
+
+// ─── PLOTTING ────────────────────────────────────────────────────
+plot(ema9, "EMA 9", color=color.new(color.yellow, 30), linewidth=1)
+plot(ema20, "EMA 20", color=color.new(color.orange, 30), linewidth=1)
+plot(ema50, "EMA 50", color=color.new(color.red, 30), linewidth=2)
+plot(vwapVal, "VWAP", color=color.new(color.purple, 20), linewidth=2, style=plot.style_stepline)
+
+// Entry signal marker
+plotshape(long_entry, "Long Setup", shape.triangleup, location.belowbar, color.new(color.lime, 0), size=size.small)
+
+// Background color for momentum
+bgcolor(is_strong ? color.new(color.green, 95) : is_moderate ? color.new(color.orange, 97) : na)
+
+// ─── STRATEGY INFO TABLE ─────────────────────────────────────────
+var table info = table.new(position.bottom_right, 2, 8, bgcolor=color.new(color.black, 20), border_color=color.gray, border_width=1)
+
+if barstate.islast
+    table.cell(info, 0, 0, "⚡ Strategy", text_color=color.white, text_size=size.small, bgcolor=color.new(color.teal, 30))
+    table.cell(info, 1, 0, "", bgcolor=color.new(color.teal, 30))
+    
+    table.cell(info, 0, 1, "VWAP", text_color=color.gray, text_size=size.tiny)
+    table.cell(info, 1, 1, close > vwapVal ? "✓ ABOVE" : "✗ BELOW", text_color=close > vwapVal ? color.lime : color.red, text_size=size.tiny)
+    
+    table.cell(info, 0, 2, "Momentum", text_color=color.gray, text_size=size.tiny)
+    mom_text = is_strong ? "STRONG" : is_moderate ? "MODERATE" : "WEAK"
+    table.cell(info, 1, 2, mom_text, text_color=is_strong ? color.lime : is_moderate ? color.orange : color.red, text_size=size.tiny)
+    
+    table.cell(info, 0, 3, "RVOL", text_color=color.gray, text_size=size.tiny)
+    table.cell(info, 1, 3, str.tostring(rvol, "#.1x"), text_color=rvol > 1.5 ? color.lime : color.orange, text_size=size.tiny)
+    
+    table.cell(info, 0, 4, "R/R", text_color=color.gray, text_size=size.tiny)
+    table.cell(info, 1, 4, "1:" + str.tostring(rr_ratio, "#.1"), text_color=rr_ratio >= 2 ? color.lime : rr_ratio >= 1.5 ? color.orange : color.red, text_size=size.tiny)
+    
+    table.cell(info, 0, 5, "RSI", text_color=color.gray, text_size=size.tiny)
+    table.cell(info, 1, 5, str.tostring(rsi14, "#.0"), text_color=rsi14 > 70 ? color.red : rsi14 < 30 ? color.green : color.white, text_size=size.tiny)
+    
+    table.cell(info, 0, 6, "Signal", text_color=color.gray, text_size=size.tiny)
+    table.cell(info, 1, 6, long_entry ? "LONG SETUP" : "WAIT", text_color=long_entry ? color.lime : color.gray, text_size=size.tiny)
+
+    table.cell(info, 0, 7, "Bullish", text_color=color.gray, text_size=size.tiny)
+    table.cell(info, 1, 7, str.tostring(bullish_count) + "/6", text_color=color.white, text_size=size.tiny)

@@ -1,0 +1,1 @@
+{"metrics": {"accuracy": 0.5939849624060151, "precision": 0.2976190476190476, "recall": 0.33783783783783783, "f1_score": 0.31645569620253167, "roc_auc": 0.5341356981981982, "rmse": 14.036837386100343}, "feature_columns": ["MA20", "MA50", "RSI", "MACD", "MACD_Signal", "BB_Upper", "BB_Lower", "Volume_Ratio"]}

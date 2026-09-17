@@ -1,0 +1,1414 @@
+{
+    "BBCA.JK": {
+        "ticker": "BBCA.JK",
+        "company": "Bank Central Asia",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Central Asia",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia",
+            "bca",
+            "bank central asia",
+            "kredit",
+            "bunga"
+        ]
+    },
+    "BBRI.JK": {
+        "ticker": "BBRI.JK",
+        "company": "Bank Rakyat Indonesia",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Rakyat Indonesia",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BMRI.JK": {
+        "ticker": "BMRI.JK",
+        "company": "Bank Mandiri",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Mandiri",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BBNI.JK": {
+        "ticker": "BBNI.JK",
+        "company": "Bank Negara Indonesia",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Negara Indonesia",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BRIS.JK": {
+        "ticker": "BRIS.JK",
+        "company": "Bank Syariah Indonesia",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Syariah Indonesia",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BTPS.JK": {
+        "ticker": "BTPS.JK",
+        "company": "Bank BTPN Syariah",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank BTPN Syariah",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "MEGA.JK": {
+        "ticker": "MEGA.JK",
+        "company": "Bank Mega",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Mega",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "NISP.JK": {
+        "ticker": "NISP.JK",
+        "company": "Bank OCBC NISP",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank OCBC NISP",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BNGA.JK": {
+        "ticker": "BNGA.JK",
+        "company": "Bank CIMB Niaga",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank CIMB Niaga",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BDMN.JK": {
+        "ticker": "BDMN.JK",
+        "company": "Bank Danamon",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Danamon",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BJBR.JK": {
+        "ticker": "BJBR.JK",
+        "company": "Bank BJB",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank BJB",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "ARTO.JK": {
+        "ticker": "ARTO.JK",
+        "company": "Bank Jago",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Jago",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "BJTM.JK": {
+        "ticker": "BJTM.JK",
+        "company": "Bank Jatim",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Jatim",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "TLKM.JK": {
+        "ticker": "TLKM.JK",
+        "company": "Telkom Indonesia",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "Telkom Indonesia",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "EXCL.JK": {
+        "ticker": "EXCL.JK",
+        "company": "XL Axiata",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "XL Axiata",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "ISAT.JK": {
+        "ticker": "ISAT.JK",
+        "company": "Indosat Ooredoo",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "Indosat Ooredoo",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "TOWR.JK": {
+        "ticker": "TOWR.JK",
+        "company": "Sarana Menara Nusantara",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "Sarana Menara Nusantara",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "TBIG.JK": {
+        "ticker": "TBIG.JK",
+        "company": "Tower Bersama",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "Tower Bersama",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "GOTO.JK": {
+        "ticker": "GOTO.JK",
+        "company": "GoTo Gojek Tokopedia",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "GoTo Gojek Tokopedia",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband",
+            "gojek",
+            "tokopedia",
+            "goto",
+            "startup",
+            "rugi bersih",
+            "profitabilitas"
+        ]
+    },
+    "BUKA.JK": {
+        "ticker": "BUKA.JK",
+        "company": "Bukalapak",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "Bukalapak",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "EMTK.JK": {
+        "ticker": "EMTK.JK",
+        "company": "Elang Mahkota Teknologi",
+        "sector": "Telco & Tech",
+        "industry": "Technology & Telecommunications",
+        "keywords": [
+            "Elang Mahkota Teknologi",
+            "tech",
+            "telekomunikasi",
+            "internet",
+            "data",
+            "digital",
+            "startup",
+            "ecommerce",
+            "aplikasi",
+            "5G",
+            "broadband"
+        ]
+    },
+    "ICBP.JK": {
+        "ticker": "ICBP.JK",
+        "company": "Indofood CBP",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Indofood CBP",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "INDF.JK": {
+        "ticker": "INDF.JK",
+        "company": "Indofood Sukses Makmur",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Indofood Sukses Makmur",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "UNVR.JK": {
+        "ticker": "UNVR.JK",
+        "company": "Unilever Indonesia",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Unilever Indonesia",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "MYOR.JK": {
+        "ticker": "MYOR.JK",
+        "company": "Mayora Indah",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Mayora Indah",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "KLBF.JK": {
+        "ticker": "KLBF.JK",
+        "company": "Kalbe Farma",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Kalbe Farma",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "HMSP.JK": {
+        "ticker": "HMSP.JK",
+        "company": "HM Sampoerna",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "HM Sampoerna",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "GGRM.JK": {
+        "ticker": "GGRM.JK",
+        "company": "Gudang Garam",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Gudang Garam",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "CPIN.JK": {
+        "ticker": "CPIN.JK",
+        "company": "Charoen Pokphand",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Charoen Pokphand",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "JPFA.JK": {
+        "ticker": "JPFA.JK",
+        "company": "Japfa Comfeed",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Japfa Comfeed",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "SIDO.JK": {
+        "ticker": "SIDO.JK",
+        "company": "Sido Muncul",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Sido Muncul",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "TSPC.JK": {
+        "ticker": "TSPC.JK",
+        "company": "Tempo Scan Pacific",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Tempo Scan Pacific",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "ULTJ.JK": {
+        "ticker": "ULTJ.JK",
+        "company": "Ultra Jaya",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Ultra Jaya",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "ACES.JK": {
+        "ticker": "ACES.JK",
+        "company": "Ace Hardware Indonesia",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Ace Hardware Indonesia",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "AMRT.JK": {
+        "ticker": "AMRT.JK",
+        "company": "Alfamart / Sumber Alfaria",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Alfamart / Sumber Alfaria",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "LPPF.JK": {
+        "ticker": "LPPF.JK",
+        "company": "Matahari Department Store",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Matahari Department Store",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "MAPI.JK": {
+        "ticker": "MAPI.JK",
+        "company": "Mitra Adiperkasa",
+        "sector": "Consumer",
+        "industry": "Consumer Goods",
+        "keywords": [
+            "Mitra Adiperkasa",
+            "consumer",
+            "retail",
+            "fmcg",
+            "makanan",
+            "minuman",
+            "daya beli",
+            "inflasi",
+            "konsumsi",
+            "sales",
+            "penjualan"
+        ]
+    },
+    "ASII.JK": {
+        "ticker": "ASII.JK",
+        "company": "Astra International",
+        "sector": "Automotive",
+        "industry": "Diversified",
+        "keywords": [
+            "Astra International",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "AUTO.JK": {
+        "ticker": "AUTO.JK",
+        "company": "Astra Otoparts",
+        "sector": "Automotive",
+        "industry": "Diversified",
+        "keywords": [
+            "Astra Otoparts",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "SMSM.JK": {
+        "ticker": "SMSM.JK",
+        "company": "Selamat Sempurna",
+        "sector": "Automotive",
+        "industry": "Diversified",
+        "keywords": [
+            "Selamat Sempurna",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "UNTR.JK": {
+        "ticker": "UNTR.JK",
+        "company": "United Tractors",
+        "sector": "Industrial",
+        "industry": "Diversified",
+        "keywords": [
+            "United Tractors",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ITMG.JK": {
+        "ticker": "ITMG.JK",
+        "company": "Indo Tambangraya Megah",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Indo Tambangraya Megah",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ANTM.JK": {
+        "ticker": "ANTM.JK",
+        "company": "Aneka Tambang",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Aneka Tambang",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "INCO.JK": {
+        "ticker": "INCO.JK",
+        "company": "Vale Indonesia",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Vale Indonesia",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "PTBA.JK": {
+        "ticker": "PTBA.JK",
+        "company": "Bukit Asam",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Bukit Asam",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ADRO.JK": {
+        "ticker": "ADRO.JK",
+        "company": "Adaro Energy",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Adaro Energy",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "MEDC.JK": {
+        "ticker": "MEDC.JK",
+        "company": "Medco Energi",
+        "sector": "Energy",
+        "industry": "Diversified",
+        "keywords": [
+            "Medco Energi",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "PGAS.JK": {
+        "ticker": "PGAS.JK",
+        "company": "Perusahaan Gas Negara",
+        "sector": "Energy",
+        "industry": "Diversified",
+        "keywords": [
+            "Perusahaan Gas Negara",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "AKRA.JK": {
+        "ticker": "AKRA.JK",
+        "company": "AKR Corporindo",
+        "sector": "Energy",
+        "industry": "Diversified",
+        "keywords": [
+            "AKR Corporindo",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ESSA.JK": {
+        "ticker": "ESSA.JK",
+        "company": "Surya Esa Perkasa",
+        "sector": "Energy",
+        "industry": "Diversified",
+        "keywords": [
+            "Surya Esa Perkasa",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "HRUM.JK": {
+        "ticker": "HRUM.JK",
+        "company": "Harum Energy",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Harum Energy",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "TINS.JK": {
+        "ticker": "TINS.JK",
+        "company": "Timah",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Timah",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "MDKA.JK": {
+        "ticker": "MDKA.JK",
+        "company": "Merdeka Copper Gold",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Merdeka Copper Gold",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "BSSR.JK": {
+        "ticker": "BSSR.JK",
+        "company": "Baramulti Suksessarana",
+        "sector": "Mining",
+        "industry": "Diversified",
+        "keywords": [
+            "Baramulti Suksessarana",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "BSDE.JK": {
+        "ticker": "BSDE.JK",
+        "company": "Bumi Serpong Damai",
+        "sector": "Property",
+        "industry": "Diversified",
+        "keywords": [
+            "Bumi Serpong Damai",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "CTRA.JK": {
+        "ticker": "CTRA.JK",
+        "company": "Ciputra Development",
+        "sector": "Property",
+        "industry": "Diversified",
+        "keywords": [
+            "Ciputra Development",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "SMRA.JK": {
+        "ticker": "SMRA.JK",
+        "company": "Summarecon Agung",
+        "sector": "Property",
+        "industry": "Diversified",
+        "keywords": [
+            "Summarecon Agung",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "PWON.JK": {
+        "ticker": "PWON.JK",
+        "company": "Pakuwon Jati",
+        "sector": "Property",
+        "industry": "Diversified",
+        "keywords": [
+            "Pakuwon Jati",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "WIKA.JK": {
+        "ticker": "WIKA.JK",
+        "company": "Wijaya Karya",
+        "sector": "Construction",
+        "industry": "Diversified",
+        "keywords": [
+            "Wijaya Karya",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "WSKT.JK": {
+        "ticker": "WSKT.JK",
+        "company": "Waskita Karya",
+        "sector": "Construction",
+        "industry": "Diversified",
+        "keywords": [
+            "Waskita Karya",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "PTPP.JK": {
+        "ticker": "PTPP.JK",
+        "company": "PP (Persero)",
+        "sector": "Construction",
+        "industry": "Diversified",
+        "keywords": [
+            "PP (Persero)",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ADHI.JK": {
+        "ticker": "ADHI.JK",
+        "company": "Adhi Karya",
+        "sector": "Construction",
+        "industry": "Diversified",
+        "keywords": [
+            "Adhi Karya",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "JSMR.JK": {
+        "ticker": "JSMR.JK",
+        "company": "Jasa Marga",
+        "sector": "Infrastructure",
+        "industry": "Diversified",
+        "keywords": [
+            "Jasa Marga",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "SMGR.JK": {
+        "ticker": "SMGR.JK",
+        "company": "Semen Indonesia",
+        "sector": "Cement",
+        "industry": "Diversified",
+        "keywords": [
+            "Semen Indonesia",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "INTP.JK": {
+        "ticker": "INTP.JK",
+        "company": "Indocement",
+        "sector": "Cement",
+        "industry": "Diversified",
+        "keywords": [
+            "Indocement",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "WSBP.JK": {
+        "ticker": "WSBP.JK",
+        "company": "Waskita Beton Precast",
+        "sector": "Cement",
+        "industry": "Diversified",
+        "keywords": [
+            "Waskita Beton Precast",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "AALI.JK": {
+        "ticker": "AALI.JK",
+        "company": "Astra Agro Lestari",
+        "sector": "Plantation",
+        "industry": "Diversified",
+        "keywords": [
+            "Astra Agro Lestari",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis",
+            "astra agro lestari",
+            "kebakaran",
+            "hutan",
+            "lahan",
+            "sawit",
+            "crude palm oil"
+        ]
+    },
+    "LSIP.JK": {
+        "ticker": "LSIP.JK",
+        "company": "PP London Sumatra",
+        "sector": "Plantation",
+        "industry": "Diversified",
+        "keywords": [
+            "PP London Sumatra",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "DSNG.JK": {
+        "ticker": "DSNG.JK",
+        "company": "Dharma Satya Nusantara",
+        "sector": "Plantation",
+        "industry": "Diversified",
+        "keywords": [
+            "Dharma Satya Nusantara",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "BBTN.JK": {
+        "ticker": "BBTN.JK",
+        "company": "Bank Tabungan Negara",
+        "sector": "Banking",
+        "industry": "Financials",
+        "keywords": [
+            "Bank Tabungan Negara",
+            "banking",
+            "bank",
+            "finance",
+            "kredit",
+            "suku bunga",
+            "interest rate",
+            "loan",
+            "laba",
+            "OJK",
+            "BI",
+            "Bank Indonesia"
+        ]
+    },
+    "PNLF.JK": {
+        "ticker": "PNLF.JK",
+        "company": "Panin Financial",
+        "sector": "Finance",
+        "industry": "Diversified",
+        "keywords": [
+            "Panin Financial",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ADMF.JK": {
+        "ticker": "ADMF.JK",
+        "company": "Adira Dinamika Multi Finance",
+        "sector": "Finance",
+        "industry": "Diversified",
+        "keywords": [
+            "Adira Dinamika Multi Finance",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "HEAL.JK": {
+        "ticker": "HEAL.JK",
+        "company": "Medikaloka Hermina",
+        "sector": "Healthcare",
+        "industry": "Diversified",
+        "keywords": [
+            "Medikaloka Hermina",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "SILO.JK": {
+        "ticker": "SILO.JK",
+        "company": "Siloam International Hospitals",
+        "sector": "Healthcare",
+        "industry": "Diversified",
+        "keywords": [
+            "Siloam International Hospitals",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "SCMA.JK": {
+        "ticker": "SCMA.JK",
+        "company": "Surya Citra Media",
+        "sector": "Media",
+        "industry": "Diversified",
+        "keywords": [
+            "Surya Citra Media",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "MNCN.JK": {
+        "ticker": "MNCN.JK",
+        "company": "MNC Digital Entertainment",
+        "sector": "Media",
+        "industry": "Diversified",
+        "keywords": [
+            "MNC Digital Entertainment",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "BRPT.JK": {
+        "ticker": "BRPT.JK",
+        "company": "Barito Pacific",
+        "sector": "Chemicals",
+        "industry": "Diversified",
+        "keywords": [
+            "Barito Pacific",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "TPIA.JK": {
+        "ticker": "TPIA.JK",
+        "company": "Chandra Asri Petrochemical",
+        "sector": "Chemicals",
+        "industry": "Diversified",
+        "keywords": [
+            "Chandra Asri Petrochemical",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "INKP.JK": {
+        "ticker": "INKP.JK",
+        "company": "Indah Kiat Pulp & Paper",
+        "sector": "Pulp & Paper",
+        "industry": "Diversified",
+        "keywords": [
+            "Indah Kiat Pulp & Paper",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "TKIM.JK": {
+        "ticker": "TKIM.JK",
+        "company": "Pabrik Kertas Tjiwi Kimia",
+        "sector": "Pulp & Paper",
+        "industry": "Diversified",
+        "keywords": [
+            "Pabrik Kertas Tjiwi Kimia",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "BIRD.JK": {
+        "ticker": "BIRD.JK",
+        "company": "Blue Bird",
+        "sector": "Transportation",
+        "industry": "Diversified",
+        "keywords": [
+            "Blue Bird",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    },
+    "ASSA.JK": {
+        "ticker": "ASSA.JK",
+        "company": "Adi Sarana Armada",
+        "sector": "Transportation",
+        "industry": "Diversified",
+        "keywords": [
+            "Adi Sarana Armada",
+            "conglomerate",
+            "diversified",
+            "otomotif",
+            "holding",
+            "investasi",
+            "bisnis"
+        ]
+    }
+}
